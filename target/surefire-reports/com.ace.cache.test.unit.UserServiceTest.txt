@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ace.cache.test.unit.UserServiceTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.912 s - in com.ace.cache.test.unit.UserServiceTest
