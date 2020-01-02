@@ -1,9 +1,0 @@
-com\ace\cache\test\CacheTest.class
-com\ace\cache\test\cache\MyKeyGenerator.class
-com\ace\cache\test\service\impl\UserServiceImpl$UserMapCacheResultParser.class
-com\ace\cache\test\service\impl\UserServiceImpl.class
-com\ace\cache\test\unit\UserServiceTest.class
-com\ace\cache\test\service\impl\UserServiceImpl$SetCacheResultParser$1.class
-com\ace\cache\test\service\UserService.class
-com\ace\cache\test\service\impl\UserServiceImpl$SetCacheResultParser.class
-com\ace\cache\test\entity\User.class
