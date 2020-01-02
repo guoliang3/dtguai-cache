@@ -34,3 +34,4 @@ target/
 .classpath
 .project
 .factorypath
+src/main/resources/
