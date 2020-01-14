@@ -9,12 +9,26 @@
 
     <licenses>
         <license>
-            <name>Apache 2</name>
+            <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:git:https://gitee.com/gouliang/dtguai-cache.git</connection>
+        <developerConnection>scm:git:https://gitee.com/gouliang/dtguai-cache.git</developerConnection>
+        <url>https://gitee.com/gouliang/dtguai-cache</url>
+        <tag>master</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>guoliang</name>
+            <email>123086461@qq.com</email>
+            <url>www.dtguai.com</url>
+        </developer>
+    </developers>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -80,27 +94,9 @@
 
     </dependencies>
 
-    <scm>
-        <connection>scm:git:https://gitee.com/gouliang/dtguai-cache.git</connection>
-        <developerConnection>scm:git:https://gitee.com/gouliang/dtguai-cache.git</developerConnection>
-        <url>https://gitee.com/gouliang/dtguai-cache</url>
-        <tag>1.0.0</tag>
-    </scm>
-
-    <developers>
-        <developer>
-            <name>guoliang</name>
-            <email>123086461@qq.com</email>
-        </developer>
-    </developers>
 
     <build>
         <plugins>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
 
             <!--Compiler-->
             <plugin>
@@ -123,7 +119,7 @@
             </plugin>
 
             <!--javadoc-->
-            <plugin>
+            <!--<plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.4</version>
                 <configuration>
@@ -138,22 +134,23 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
 
             <!-- gpg plugin,用于签名认证 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-gpg-plugin</artifactId>
+                 <version>1.6</version>
+                 <executions>
+                     <execution>
+                         <id>sign-artifacts</id>
+                         <phase>verify</phase>
+                         <goals>
+                             <goal>sign</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>-->
 
             <!--staging puglin,用于自动执行发布阶段(免手动)-->
             <plugin>
@@ -162,7 +159,7 @@
                 <version>1.6.7</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>dtguai.cache</serverId>
+                    <serverId>dtguai-cache</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
@@ -183,11 +180,11 @@
     <distributionManagement>
         <snapshotRepository>
             <!--oss需要对应到settings.xml下的service的id-->
-            <id>dtguai.cache</id>
+            <id>dtguai-cache</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>dtguai.cache</id>
+            <id>dtguai-cache</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
