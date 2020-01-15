@@ -8,9 +8,9 @@
 ## Maven依赖
 ```
     <dependency>
-            <groupId>com.dtguai</groupId>
-            <artifactId>dtguai-cache</artifactId>
-            <version>${dtguai.version}</version>
+        <groupId>com.dtguai.cache</groupId>
+        <artifactId>dtguai-cache</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 ## 缓存配置
