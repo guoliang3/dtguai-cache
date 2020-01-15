@@ -29,7 +29,8 @@ public class DefaultResultParser implements CacheResultParser<Object> {
             ParameterizedType parameterizedType = (ParameterizedType) type;
             Type rawType = parameterizedType.getRawType();
             if (((Class<?>) rawType).isAssignableFrom(List.class)) {
-                result = JSON.parseArray(value, (Class<?>) parameterizedType.getActualTypeArguments()[0]);
+                //result = JSON.parseArray(value, (Class<?>) parameterizedType.getActualTypeArguments()[0]);
+                result = JSON.parseArray(value, type.getClass());
             }
         }
         return result == null ? JSON.parseObject(value, type) : result;
