@@ -17,7 +17,7 @@ public interface UserService {
 
     Set<User> getSet();
 
-    Map<String, User> getMap(Map<String,Object> m,List l,User user);
+    Map<String, User> getMap(Map<String, Object> m, List l, User user);
 
     void save(User user);
 

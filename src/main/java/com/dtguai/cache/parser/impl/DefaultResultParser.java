@@ -30,7 +30,7 @@ public class DefaultResultParser implements CacheResultParser<Object> {
             Type rawType = parameterizedType.getRawType();
             if (((Class<?>) rawType).isAssignableFrom(List.class)) {
                 //result = JSON.parseArray(value, (Class<?>) parameterizedType.getActualTypeArguments()[0]);
-                result = JSON.parseArray(value, type.getClass());
+                result = JSON.parseArray(value, (Class<?>) parameterizedType.getActualTypeArguments()[0]);
             }
         }
         return result == null ? JSON.parseObject(value, type) : result;

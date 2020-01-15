@@ -1,13 +1,13 @@
 package com.dtguai.cache.test.service.impl;
 
-import com.dtguai.cache.test.cache.MyKeyGenerator;
-import com.dtguai.cache.test.entity.User;
-import com.dtguai.cache.test.service.UserService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.dtguai.cache.annotation.Cache;
 import com.dtguai.cache.annotation.CacheClear;
 import com.dtguai.cache.parser.CacheResultParser;
+import com.dtguai.cache.test.cache.MyKeyGenerator;
+import com.dtguai.cache.test.entity.User;
+import com.dtguai.cache.test.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

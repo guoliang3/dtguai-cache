@@ -1,9 +1,9 @@
 package com.dtguai.cache.test.unit;
 
+import com.alibaba.fastjson.JSON;
 import com.dtguai.cache.test.CacheTest;
 import com.dtguai.cache.test.entity.User;
 import com.dtguai.cache.test.service.UserService;
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
