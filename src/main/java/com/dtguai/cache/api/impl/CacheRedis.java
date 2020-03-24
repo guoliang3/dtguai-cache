@@ -23,8 +23,6 @@ import java.util.Optional;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class CacheRedis implements CacheApi {
 
-    private RedisConfiguration redisConfiguration;
-
     private IRedisService redisCacheService;
 
     /**
