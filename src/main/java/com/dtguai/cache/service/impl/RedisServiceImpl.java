@@ -3,7 +3,6 @@ package com.dtguai.cache.service.impl;
 import com.dtguai.cache.service.IRedisService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +17,11 @@ import java.util.concurrent.TimeUnit;
  * @date 2019年12月4日15:02:50
  */
 @Slf4j
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+@AllArgsConstructor
 @Service
 public class RedisServiceImpl implements IRedisService {
 
-    private RedisTemplate<String, String> redisTemplate;
+    private final RedisTemplate<String, String> redisTemplate;
 
 
     /**

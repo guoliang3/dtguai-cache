@@ -16,7 +16,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  */
 @Configuration
 @Data
-public class RedisConfiguration {
+public class DtRedisConfiguration {
 
     /**
      * 服务名称

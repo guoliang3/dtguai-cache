@@ -2,7 +2,7 @@ package com.dtguai.cache.aspect;
 
 import com.dtguai.cache.annotation.CacheClear;
 import com.dtguai.cache.api.CacheApi;
-import com.dtguai.cache.config.RedisConfiguration;
+import com.dtguai.cache.config.DtRedisConfiguration;
 import com.dtguai.cache.parser.KeyGenerator;
 import com.dtguai.cache.parser.impl.DefaultKeyGenerator;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ public class CacheClearAspect {
     private CacheApi cacheApi;
 
     @Autowired
-    private RedisConfiguration redisConfiguration;
+    private DtRedisConfiguration dtRedisConfiguration;
 
     private ConcurrentHashMap<String, KeyGenerator> generatorMap = new ConcurrentHashMap<>();
 
@@ -102,7 +102,7 @@ public class CacheClearAspect {
      * 加入系统前缀
      */
     public String addSys(String key) {
-        return redisConfiguration.getApplicationName() + ":" + key;
+        return dtRedisConfiguration.getApplicationName() + ":" + key;
     }
 
 }

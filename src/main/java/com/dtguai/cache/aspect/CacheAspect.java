@@ -2,10 +2,11 @@ package com.dtguai.cache.aspect;
 
 import com.dtguai.cache.annotation.Cache;
 import com.dtguai.cache.api.CacheApi;
-import com.dtguai.cache.config.RedisConfiguration;
+import com.dtguai.cache.config.DtRedisConfiguration;
 import com.dtguai.cache.parser.CacheResultParser;
 import com.dtguai.cache.parser.KeyGenerator;
 import com.dtguai.cache.parser.impl.DefaultKeyGenerator;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,7 +14,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
@@ -30,19 +30,17 @@ import java.util.concurrent.ConcurrentHashMap;
 @Aspect
 @Service
 @Slf4j
+@AllArgsConstructor
 public class CacheAspect {
 
-    @Autowired
-    private KeyGenerator keyParser;
+    private final KeyGenerator keyParser;
 
-    @Autowired
-    private CacheApi cacheApi;
+    private final CacheApi cacheApi;
 
-    @Autowired
-    private RedisConfiguration redisConfiguration;
+    private final DtRedisConfiguration dtRedisConfiguration;
 
-    private ConcurrentHashMap<String, CacheResultParser<?>> parserMap = new ConcurrentHashMap<>();
-    private ConcurrentHashMap<String, KeyGenerator> generatorMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, CacheResultParser<?>> parserMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, KeyGenerator> generatorMap = new ConcurrentHashMap<>();
 
     @Pointcut("@annotation(com.dtguai.cache.annotation.Cache)")
     public void aspect() {
@@ -79,7 +77,7 @@ public class CacheAspect {
     /**
      * 获取key生成实例
      *
-     * @param cache           标签信息
+     * @param cache          标签信息
      * @param parameterTypes 参数类型
      * @param arguments      传入参数
      * @return String
@@ -113,7 +111,7 @@ public class CacheAspect {
      * 加入系统前缀
      */
     public String addSys(String key) {
-        return redisConfiguration.getApplicationName() + ":" + key;
+        return dtRedisConfiguration.getApplicationName() + ":" + key;
     }
 
     /**

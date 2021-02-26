@@ -2,12 +2,10 @@ package com.dtguai.cache.api.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.dtguai.cache.api.CacheApi;
-import com.dtguai.cache.config.RedisConfiguration;
 import com.dtguai.cache.service.IRedisService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -20,10 +18,10 @@ import java.util.Optional;
  */
 @Slf4j
 @Component
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+@AllArgsConstructor
 public class CacheRedis implements CacheApi {
 
-    private IRedisService redisCacheService;
+    private final IRedisService redisCacheService;
 
     /**
      * 获取 缓存内容
@@ -31,7 +29,7 @@ public class CacheRedis implements CacheApi {
     @Override
     public String get(String key) {
         return Optional.ofNullable(key)
-                .map(x -> redisCacheService.get(x))
+                .map(redisCacheService::get)
                 .orElse(null);
     }
 
