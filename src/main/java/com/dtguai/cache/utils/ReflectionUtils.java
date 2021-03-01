@@ -53,7 +53,7 @@ public class ReflectionUtils {
                 return field;
             } catch (NoSuchFieldException e) {
                 // Field不在当前类定义,继续向上转型
-                log.error(e.getMessage());
+                log.error("Field不在当前类定义,继续向上转型 msg:{}",e.getMessage());
             }
         }
         return null;
