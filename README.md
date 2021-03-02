@@ -10,7 +10,7 @@
     <dependency>
         <groupId>com.dtguai.cache</groupId>
         <artifactId>dtguai-cache</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1.RELEASE</version>
     </dependency>
 ```
 ## 缓存配置
