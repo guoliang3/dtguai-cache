@@ -21,13 +21,5 @@ public interface UserService {
 
     void save(User user);
 
-    /**
-     * 空key
-     *
-     * @param user user
-     * @return User
-     */
-    User nullKey(User user);
-
     User get(int age);
 }
