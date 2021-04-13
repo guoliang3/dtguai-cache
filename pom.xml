@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.dtguai.cache</groupId>
+    <groupId>com.dtguai</groupId>
     <artifactId>dtguai-cache</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <name>dtguai-cache</name>
     <url>https://gitee.com/gouliang/dtguai-cache</url>
 
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -35,6 +35,10 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.9.RELEASE</version>
     </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
 
@@ -89,16 +93,15 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <release>11</release>
-                            <source>11</source>
-                            <target>11</target>
+                            <release>${java.version}</release>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
                         </configuration>
                     </plugin>
 
                     <!--打包源代码-->
                     <plugin>
                         <artifactId>maven-source-plugin</artifactId>
-                        <!--<version>3.0.1</version>-->
                         <executions>
                             <execution>
                                 <id>attach-sources</id>

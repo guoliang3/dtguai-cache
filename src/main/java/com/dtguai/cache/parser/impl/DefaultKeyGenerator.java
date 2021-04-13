@@ -46,7 +46,7 @@ public class DefaultKeyGenerator implements KeyGenerator {
      */
     @Override
     public String getKey(String key, Class<?>[] parameterTypes, Object[] arguments) {
-        if (key.indexOf(LEFT_BRACKET) > 0) {
+        if (key.contains(LEFT_BRACKET)) {
             Matcher matcher = PATTERN.matcher(key);
             while (matcher.find()) {
                 String tmp = matcher.group();
@@ -69,6 +69,5 @@ public class DefaultKeyGenerator implements KeyGenerator {
         }
         return key;
     }
-
 
 }

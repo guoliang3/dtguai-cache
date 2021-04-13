@@ -38,7 +38,7 @@ public class CacheClearAspect {
     @Autowired
     private DtRedisConfiguration dtRedisConfiguration;
 
-    private ConcurrentHashMap<String, KeyGenerator> generatorMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, KeyGenerator> generatorMap = new ConcurrentHashMap<>();
 
     @Pointcut("@annotation(com.dtguai.cache.annotation.CacheClear)")
     public void aspect() {
