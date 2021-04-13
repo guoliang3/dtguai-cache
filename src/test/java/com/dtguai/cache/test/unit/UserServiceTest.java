@@ -65,6 +65,11 @@ public class UserServiceTest {
     }
 
     @Test
+    public void testNullKey() {
+        userService.nullKey(new User("fuck4", 4, "cx-fuck4"));
+    }
+
+    @Test
     public void testByKeyGenerator() {
         log.warn(JSON.toJSONString(userService.get(29)));
     }

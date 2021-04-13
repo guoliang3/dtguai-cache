@@ -42,6 +42,7 @@ public class CacheClearAspect {
 
     @Pointcut("@annotation(com.dtguai.cache.annotation.CacheClear)")
     public void aspect() {
+        //切面
     }
 
     @Around("aspect()&&@annotation(cacheClear)")

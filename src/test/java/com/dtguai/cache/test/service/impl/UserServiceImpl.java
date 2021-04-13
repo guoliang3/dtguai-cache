@@ -77,6 +77,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Cache
+    public User nullKey(User user) {
+        return user;
+    }
+
+    @Override
     @Cache(generator = MyKeyGenerator.class)
     public User get(int age) {
         log.warn("从get方法内读取....");
