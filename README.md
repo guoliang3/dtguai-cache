@@ -8,7 +8,7 @@
 ## Maven依赖
 ```
     <dependency>
-        <groupId>com.dtguai.cache</groupId>
+        <groupId>com.dtguai</groupId>
         <artifactId>dtguai-cache</artifactId>
         <version>1.0.3</version>
     </dependency>
